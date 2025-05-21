@@ -1,3 +1,6 @@
 [submodule "zmodlib"]
+    url=https://github.com/dannyp303/zmodlib/
 	path = zmodlib
-	url = ../zmodlib.git
+[submodule "libuio"]
+	path = libuio
+	url = git@github.com:dannyp303/libuio.git
