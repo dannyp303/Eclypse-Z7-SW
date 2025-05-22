@@ -1,5 +1,20 @@
 # Eclypse Z7 Zmod ADC 1410 + Zmod DAC 1411 SDK Workspace
 
+## Fork Updates
+This fork allows you to build zmodlib on petalinux2019.1 using the [Linaro ARM gcc cross compiler](https://releases.linaro.org/components/toolchain/binaries/7.3-2018.05/arm-linux-gnueabihf/).
+
+It includes a Makefile in [the ZmodADC1410_Demo_Linux demo](https://github.com/dannyp303/Eclypse-Z7-SW/blob/zmod_adc_dac/master/ZmodADC1410_Demo_Linux/Makefile) that builds zmodlib and the demo, which can be adjusted to any c++ file.
+
+Relevant C sources have been wrapped with 
+```
+#ifdef __cplusplus
+extern "C" {
+#endif
+```
+to allow mixing of C/C++ sources on petalinux.
+
+Additionally, [my fork of libuio](https://github.com/dannyp303/libuio) with extern C changes has been added as a submodule alongside [my fork of zmodlib](https://github.com/dannyp303/zmodlib).
+
 ## Description
 
 This is a branch of the Eclypse Z7 board containing the SDK workspace with the Zmod ADC 1410 set in Zmod connector A and Zmod DAC 1411 set in Zmod connector B. The project is configured to work with the [zmodlib](https://github.com/Digilent/zmodlib) in order to showcase the use of the Zmod ADC 1410 and Zmod DAC 1411 with the Eclypse Z7. The workspace contains projects targeting both bare-metal and linux, which possess the same functionality regardless of OS platform. The functionality of the SDK demo is documented inside the code via comments.
